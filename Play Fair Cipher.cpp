@@ -108,17 +108,17 @@ int main() {
     char key[100], plaintext[100], ciphertext[100];
     char matrix[SIZE][SIZE];
 
-    // Get the key from user
+   
     printf("Enter the keyword (letters only): ");
     fgets(key, sizeof(key), stdin);
-    key[strcspn(key, "\n")] = '\0';  // Remove trailing newline
+    key[strcspn(key, "\n")] = '\0';  
 
-    // Get the plaintext from user
+    
     printf("Enter the plaintext (letters only): ");
     fgets(plaintext, sizeof(plaintext), stdin);
-    plaintext[strcspn(plaintext, "\n")] = '\0';  // Remove trailing newline
+    plaintext[strcspn(plaintext, "\n")] = '\0'; 
 
-    // Remove non-alphabetic characters from plaintext
+   t
     char filteredText[100];
     int j = 0;
     for (int i = 0; i < strlen(plaintext); i++) {
@@ -128,13 +128,13 @@ int main() {
     }
     filteredText[j] = '\0';
 
-    // Create the 5x5 matrix
+   
     createMatrix(key, matrix);
 
-    // Encrypt the plaintext
+   
     playfairEncrypt(filteredText, matrix, ciphertext);
 
-    // Print the ciphertext
+    
     printf("Ciphertext: %s\n", ciphertext);
 
     return 0;
